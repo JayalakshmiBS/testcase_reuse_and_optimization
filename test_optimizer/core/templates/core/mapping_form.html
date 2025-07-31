@@ -1,0 +1,56 @@
+<!-- core/templates/core/mapping_form.html -->
+<!-- This is the new dynamic form template. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interface Mapping for {{ program.name }}</title>
+    <style>
+        body { font-family: sans-serif; padding: 2em; max-width: 800px; margin: auto; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        input[type="text"] { width: 95%; padding: 5px; }
+        button { padding: 10px 20px; font-size: 1em; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Interface Mapping Required for: {{ program.name }}</h1>
+    <p>We analyzed your code and found some incompatibilities with our reusable tests. Please tell us how to map the functions our tests expect to the functions in your program. Leave a field blank if your program does not support that function.</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <h3>Module and Class Names</h3>
+        <table>
+            <tr>
+                <th>Expected Name</th>
+                <th>Your Program's Name</th>
+            </tr>
+            <tr>
+                <td>Main Module Name</td>
+                <td><input type="text" name="module_name" value="{{ mappings.module_name }}" required></td>
+            </tr>
+            <tr>
+                <td>Main Class Name</td>
+                <td><input type="text" name="class_name" value="{{ mappings.class_name }}" required></td>
+            </tr>
+        </table>
+
+        <h3>Function Mappings</h3>
+        <table>
+            <tr>
+                <th>Function Expected by Old Tests</th>
+                <th>Your Program's Equivalent Function</th>
+            </tr>
+            {% for func_name in mappings.functions %}
+            <tr>
+                <td><code>{{ func_name }}</code></td>
+                <td><input type="text" name="func_{{ func_name }}" placeholder="e.g., perform_{{ func_name }}"></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <button type="submit">Save Map and Run Full Analysis</button>
+    </form>
+</body>
+</html>

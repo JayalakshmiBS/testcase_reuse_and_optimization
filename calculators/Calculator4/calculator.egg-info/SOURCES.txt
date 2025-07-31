@@ -1,0 +1,15 @@
+setup.py
+calculator.egg-info/PKG-INFO
+calculator.egg-info/SOURCES.txt
+calculator.egg-info/dependency_links.txt
+calculator.egg-info/top_level.txt
+tests/__init__.py
+tests/test_addition.py
+tests/test_calculate.py
+tests/test_division.py
+tests/test_edge_cases.py
+tests/test_invalid_inputs.py
+tests/test_modulus.py
+tests/test_multiplication.py
+tests/test_subtraction.py
+tests/test_trignometric.py

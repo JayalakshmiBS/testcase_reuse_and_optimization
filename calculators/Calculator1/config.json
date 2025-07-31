@@ -1,0 +1,8 @@
+{
+    "module": "calc",  
+    "test-command": "pytest",  
+    "baseline": false,  
+    "worker-count": 4,  
+    "exclude-modules": []  
+  }
+  

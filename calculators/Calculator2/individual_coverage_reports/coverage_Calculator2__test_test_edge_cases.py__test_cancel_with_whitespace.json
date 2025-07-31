@@ -1,0 +1,454 @@
+{
+    "meta": {
+        "format": 3,
+        "version": "7.9.1",
+        "timestamp": "2025-07-20T13:25:01.602148",
+        "branch_coverage": true,
+        "show_contexts": false,
+        "test_id": "Calculator2::test/test_edge_cases.py::test_cancel_with_whitespace"
+    },
+    "files": {
+        "src\\__init__.py": {
+            "executed_lines": [],
+            "summary": {
+                "covered_lines": 0,
+                "num_statements": 0,
+                "percent_covered": 100.0,
+                "percent_covered_display": "100",
+                "missing_lines": 0,
+                "excluded_lines": 0,
+                "num_branches": 0,
+                "num_partial_branches": 0,
+                "covered_branches": 0,
+                "missing_branches": 0
+            },
+            "missing_lines": [],
+            "excluded_lines": [],
+            "executed_branches": [],
+            "missing_branches": [],
+            "functions": {
+                "": {
+                    "executed_lines": [],
+                    "summary": {
+                        "covered_lines": 0,
+                        "num_statements": 0,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "executed_branches": [],
+                    "missing_branches": []
+                }
+            },
+            "classes": {
+                "": {
+                    "executed_lines": [],
+                    "summary": {
+                        "covered_lines": 0,
+                        "num_statements": 0,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "executed_branches": [],
+                    "missing_branches": []
+                }
+            }
+        },
+        "src\\cal_logic.py": {
+            "executed_lines": [
+                1,
+                2,
+                7,
+                8,
+                9,
+                10,
+                12,
+                32,
+                33,
+                34,
+                35,
+                37,
+                42
+            ],
+            "summary": {
+                "covered_lines": 13,
+                "num_statements": 36,
+                "percent_covered": 30.952380952380953,
+                "percent_covered_display": "31",
+                "missing_lines": 23,
+                "excluded_lines": 0,
+                "num_branches": 6,
+                "num_partial_branches": 0,
+                "covered_branches": 0,
+                "missing_branches": 6
+            },
+            "missing_lines": [
+                13,
+                14,
+                15,
+                17,
+                18,
+                21,
+                26,
+                28,
+                29,
+                38,
+                39,
+                43,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55
+            ],
+            "excluded_lines": [],
+            "executed_branches": [],
+            "missing_branches": [
+                [
+                    13,
+                    14
+                ],
+                [
+                    13,
+                    21
+                ],
+                [
+                    14,
+                    15
+                ],
+                [
+                    14,
+                    17
+                ],
+                [
+                    21,
+                    26
+                ],
+                [
+                    21,
+                    28
+                ]
+            ],
+            "functions": {
+                "CalculatorLogic.__init__": {
+                    "executed_lines": [
+                        9,
+                        10
+                    ],
+                    "summary": {
+                        "covered_lines": 2,
+                        "num_statements": 2,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "CalculatorLogic.insert": {
+                    "executed_lines": [],
+                    "summary": {
+                        "covered_lines": 0,
+                        "num_statements": 9,
+                        "percent_covered": 0.0,
+                        "percent_covered_display": "0",
+                        "missing_lines": 9,
+                        "excluded_lines": 0,
+                        "num_branches": 6,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 6
+                    },
+                    "missing_lines": [
+                        13,
+                        14,
+                        15,
+                        17,
+                        18,
+                        21,
+                        26,
+                        28,
+                        29
+                    ],
+                    "excluded_lines": [],
+                    "executed_branches": [],
+                    "missing_branches": [
+                        [
+                            13,
+                            14
+                        ],
+                        [
+                            13,
+                            21
+                        ],
+                        [
+                            14,
+                            15
+                        ],
+                        [
+                            14,
+                            17
+                        ],
+                        [
+                            21,
+                            26
+                        ],
+                        [
+                            21,
+                            28
+                        ]
+                    ]
+                },
+                "CalculatorLogic.cancel": {
+                    "executed_lines": [
+                        33,
+                        34,
+                        35
+                    ],
+                    "summary": {
+                        "covered_lines": 3,
+                        "num_statements": 3,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "CalculatorLogic.delete_last": {
+                    "executed_lines": [],
+                    "summary": {
+                        "covered_lines": 0,
+                        "num_statements": 2,
+                        "percent_covered": 0.0,
+                        "percent_covered_display": "0",
+                        "missing_lines": 2,
+                        "excluded_lines": 0,
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0
+                    },
+                    "missing_lines": [
+                        38,
+                        39
+                    ],
+                    "excluded_lines": [],
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "CalculatorLogic.calculate": {
+                    "executed_lines": [],
+                    "summary": {
+                        "covered_lines": 0,
+                        "num_statements": 12,
+                        "percent_covered": 0.0,
+                        "percent_covered_display": "0",
+                        "missing_lines": 12,
+                        "excluded_lines": 0,
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0
+                    },
+                    "missing_lines": [
+                        43,
+                        45,
+                        46,
+                        47,
+                        48,
+                        49,
+                        50,
+                        51,
+                        52,
+                        53,
+                        54,
+                        55
+                    ],
+                    "excluded_lines": [],
+                    "executed_branches": [],
+                    "missing_branches": []
+                },
+                "": {
+                    "executed_lines": [
+                        1,
+                        2,
+                        7,
+                        8,
+                        12,
+                        32,
+                        37,
+                        42
+                    ],
+                    "summary": {
+                        "covered_lines": 8,
+                        "num_statements": 8,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "executed_branches": [],
+                    "missing_branches": []
+                }
+            },
+            "classes": {
+                "CalculatorLogic": {
+                    "executed_lines": [
+                        9,
+                        10,
+                        33,
+                        34,
+                        35
+                    ],
+                    "summary": {
+                        "covered_lines": 5,
+                        "num_statements": 28,
+                        "percent_covered": 14.705882352941176,
+                        "percent_covered_display": "15",
+                        "missing_lines": 23,
+                        "excluded_lines": 0,
+                        "num_branches": 6,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 6
+                    },
+                    "missing_lines": [
+                        13,
+                        14,
+                        15,
+                        17,
+                        18,
+                        21,
+                        26,
+                        28,
+                        29,
+                        38,
+                        39,
+                        43,
+                        45,
+                        46,
+                        47,
+                        48,
+                        49,
+                        50,
+                        51,
+                        52,
+                        53,
+                        54,
+                        55
+                    ],
+                    "excluded_lines": [],
+                    "executed_branches": [],
+                    "missing_branches": [
+                        [
+                            13,
+                            14
+                        ],
+                        [
+                            13,
+                            21
+                        ],
+                        [
+                            14,
+                            15
+                        ],
+                        [
+                            14,
+                            17
+                        ],
+                        [
+                            21,
+                            26
+                        ],
+                        [
+                            21,
+                            28
+                        ]
+                    ]
+                },
+                "": {
+                    "executed_lines": [
+                        1,
+                        2,
+                        7,
+                        8,
+                        12,
+                        32,
+                        37,
+                        42
+                    ],
+                    "summary": {
+                        "covered_lines": 8,
+                        "num_statements": 8,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0,
+                        "num_branches": 0,
+                        "num_partial_branches": 0,
+                        "covered_branches": 0,
+                        "missing_branches": 0
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": [],
+                    "executed_branches": [],
+                    "missing_branches": []
+                }
+            }
+        }
+    },
+    "totals": {
+        "covered_lines": 13,
+        "num_statements": 36,
+        "percent_covered": 30.952380952380953,
+        "percent_covered_display": "31",
+        "missing_lines": 23,
+        "excluded_lines": 0,
+        "num_branches": 6,
+        "num_partial_branches": 0,
+        "covered_branches": 0,
+        "missing_branches": 6
+    }
+}

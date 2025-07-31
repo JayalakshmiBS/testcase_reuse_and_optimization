@@ -1,0 +1,88 @@
+<!-- report.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Reuse Report for {{ program.name }}</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; padding: 2em; background-color: #f8f9fa; color: #212529; }
+        .container { max-width: 960px; margin: auto; }
+        h1, h2 { color: #343a40; border-bottom: 2px solid #dee2e6; padding-bottom: 0.5rem; }
+        .report-section { margin-bottom: 2.5em; }
+        .test-item { background-color: white; margin: 0.5em 0; padding: 1em; border-radius: 8px; border-left: 6px solid; box-shadow: 0 2px 5px rgba(0,0,0,0.08); font-family: 'Consolas', 'Courier New', Courier, monospace; font-size: 0.9em; word-break: break-all; }
+        .GREEN { border-color: #28a745; }
+        .YELLOW { border-color: #ffc107; }
+        .RED { border-color: #dc3545; }
+        .status-badge { display: inline-block; padding: 0.3em 0.7em; font-size: 0.9em; font-weight: 700; line-height: 1; text-align: center; border-radius: 0.375rem; color: #fff; margin-right: 1rem; }
+        .bg-green { background-color: #28a745; }
+        .bg-yellow { background-color: #ffc107; color: #212529;}
+        .bg-red { background-color: #dc3545; }
+        pre { background-color: #e9ecef; padding: 1em; border-radius: 5px; white-space: pre-wrap; margin-top: 1em; }
+        code { font-family: 'Consolas', 'Courier New', Courier, monospace; }
+        .error-message { background-color: #f8d7da; color: #721c24; padding: 1rem; border: 1px solid #f5c6cb; border-radius: .25rem; }
+        /* --- NEW STYLES FOR SCORECARD --- */
+        .scorecard { display: flex; gap: 2rem; background-color: #e9ecef; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; }
+        .score { text-align: center; }
+        .score-value { font-size: 2.5rem; font-weight: 700; color: #007bff; }
+        .score-label { font-size: 1rem; color: #6c757d; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Test Reuse Report for: <strong>{{ program.name }}</strong></h1>
+
+        {% if report.classification_data.0.status == "ERROR" %}
+            <div class="error-message">
+                <h2>Analysis Failed</h2>
+                <p>{{ report.classification_data.0.message }}</p>
+            </div>
+        {% else %}
+            <!-- --- NEW VERIFICATION SUMMARY SECTION --- -->
+            <div class="report-section">
+                <h2>Verification Summary</h2>
+                <p>This is the final, measured coverage achieved by running the optimized suite (all GREEN tests + all new RED tests).</p>
+                <div class="scorecard">
+                    <div class="score">
+                        <div class="score-value">{{ report.final_statement_coverage|floatformat:2 }}%</div>
+                        <div class="score-label">Statement Coverage</div>
+                    </div>
+                    <div class="score">
+                        <div class="score-value">{{ report.final_branch_coverage|floatformat:2 }}%</div>
+                        <div class="score-label">Branch Coverage</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="report-section">
+                <h2><span class="status-badge bg-green">GREEN</span> Directly Reusable Tests</h2>
+                <p>These are the most efficient tests from your golden suite that provide maximum coverage for this program.</p>
+                {% for item in report.classification_data %}{% if item.status == 'GREEN' %}
+                    <div class="test-item GREEN">{{ item.test_id }}</div>
+                {% endif %}{% endfor %}
+            </div>
+
+            <div class="report-section">
+                <h2><span class="status-badge bg-yellow">YELLOW</span> Reusable but Redundant Tests</h2>
+                <p>These tests are also reusable, but the coverage they provide is already handled by the GREEN tests. They were optimized out.</p>
+                {% for item in report.classification_data %}{% if item.status == 'YELLOW' %}
+                    <div class="test-item YELLOW">{{ item.test_id }}</div>
+                {% endif %}{% endfor %}
+            </div>
+
+            <div class="report-section">
+                <h2><span class="status-badge bg-red">RED</span> Coverage Gaps & Suggested New Tests</h2>
+                <p>No existing tests cover these parts of the new program. New tests are required. Here are some AI-powered suggestions:</p>
+                {% for item in report.classification_data %}{% if item.status == 'RED' %}
+                    <div class="test-item RED">
+                        <strong>{{ item.suggestion_title }}</strong>
+                        <pre><code>{{ item.suggestion_code }}</code></pre>
+                    </div>
+                {% endif %}{% endfor %}
+            </div>
+        {% endif %}
+        <h1>Test Reuse Report for: <strong>{{ program.name }}</strong></h1>
+        <a href="{% url 'download_suite' program.id %}">
+            <button>Download Optimized Test Suite</button>
+        </a>
+    </div>
+</body>
+</html>

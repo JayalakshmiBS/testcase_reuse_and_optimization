@@ -1,0 +1,4 @@
+[cosmic-ray]
+module-path = "."  # Path to your Python module
+timeout = 10       # Maximum time per test execution
+test-command = "pytest"  # Command to run tests (use pytest or unittest)
