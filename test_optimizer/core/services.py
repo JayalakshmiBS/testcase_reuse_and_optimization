@@ -108,7 +108,7 @@ def suggest_test_for_gap(code_context: str):
     try:
         chatHistory = [{"role": "user", "parts": [{"text": prompt}]}]
         payload = {"contents": chatHistory}
-        apiKey = "AIzaSyCQkwJ7OQJQE0RDRI2dwT4PTn1vBKOkDlI" # IMPORTANT: Add your Gemini API Key
+        apiKey = "" # IMPORTANT: Add your Gemini API Key
         apiUrl = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={apiKey}"
         response = httpx.post(apiUrl, json=payload, headers={'Content-Type': 'application/json'}, timeout=60)
         response.raise_for_status()
